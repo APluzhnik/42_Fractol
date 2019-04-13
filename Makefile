@@ -6,7 +6,7 @@
 #    By: apluzhni <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/16 17:06:54 by apluzhni          #+#    #+#              #
-#    Updated: 2019/04/08 11:23:01 by apluzhni         ###   ########.fr        #
+#    Updated: 2019/04/11 11:44:53 by apluzhni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ OBJ_DIR = ./object/
 INC_DIR = ./include/
 LIB_DIR = ./libft/
 
-SRC = main.c events.c render.c help.c init.c
+SRC = main.c events.c render.c help.c init.c \
+	  threads.c my_fractols.c fract_formula.c
 OBJ = $(addprefix $(OBJ_DIR),$(SRC:.c=.o))
 INC = $(addprefix $(INC_DIR),fractol.h)
 LIB = libft.a
@@ -41,6 +42,7 @@ $(NAME): $(LIB) $(OBJ_DIR) $(OBJ)
 	@gcc -g $(FLAG) $(LIB_LNK) $(MLX_LNK) $(MAT_LNK) $(addprefix $(SRC_DIR),$(SRC)) -o $(NAME)
 	$(call colorecho, "$(NAME): Complete!", 2)
 	$(call colorecho, "$(NAME): Executable file (./$(NAME)) is ready!", 4)
+	$(call colorecho, "Usage: ./fractol <Fractal_name>", 4)
 
 $(LIB):
 	$(call colorecho, "$(NAME): Making lib...", 4)
@@ -80,6 +82,19 @@ kill:
 	@pkill fractol
 	$(call colorecho, "$(NAME): Killed!", 2)
 
+help:
+	$(call colorecho, "~~~ Fract'ols list ~~~", 3)
+	$(call colorecho, "1.  Julia", 3)
+	$(call colorecho, "2.  Mandelbrot", 3)
+	$(call colorecho, "3.  3", 3)
+	$(call colorecho, "4.  4", 3)
+	$(call colorecho, "5.  5", 3)
+	$(call colorecho, "6.  Dollor", 3)
+	$(call colorecho, "7.  Butterfly", 3)
+	$(call colorecho, "8.  Rrings", 3)
+	$(call colorecho, "9.  Earth", 3)
+	$(call colorecho, "10. Web", 3)
+
 j: re
 	$(call colorecho, "$(NAME): No errors.", 2)
 	$(call colorecho, "$(NAME): Start Julia...", 5)
@@ -90,4 +105,4 @@ m: re
 	$(call colorecho, "$(NAME): Start Mandelbrot...", 5)
 	@./fractol Mandelbrot
 
-.PHONY: clean fclean re kill
+.PHONY: clean fclean re kill help

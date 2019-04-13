@@ -6,7 +6,7 @@
 /*   By: apluzhni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 11:22:30 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/04/08 11:27:59 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/04/13 18:55:22 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 void	init(t_main *mm)
 {
-	C_RE = -0.7; // 0.285 -0.8
-	C_IM = 0.27015; // 0.01 0.156
-	PR = 0;
-	PI = 0;
-
-	COLOR = INDIGO; //NAVY MIDNIGHTBLUE INDIGO MAROON LIME
-	COLOR2 = AQUA;
-
+	init_const(mm);
+	MAX_ITER = 150;
+	COLOR = 318568064; // WHITE NAVY MIDNIGHTBLUE INDIGO MAROON LIME AQUA
+	COLOR2 = BLACK;
+	mm->psyho = -1;
+	mm->change_colors = -1;
 	mm->win_help = NULL;
 
 	init_position(mm);
@@ -38,9 +36,15 @@ void	init_complex(t_main *mm)
 
 void	init_position(t_main *mm)
 {
-	ZOOM = 1;
-	MOVE_X = 0;
-	MOVE_Y = 0;
-	if (mm->id == 2)
-		MOVE_X = -0.5;
+	ZOOM = 500;
+	MOVE_X = -1.5;
+	MOVE_Y = -1;
+}
+
+void	init_const(t_main *mm)
+{
+	C_RE = -0.7;
+	C_IM = 0.27015;
+	PR = 0;
+	PI = 0;
 }
