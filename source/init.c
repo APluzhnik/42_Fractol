@@ -6,7 +6,7 @@
 /*   By: apluzhni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 11:22:30 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/04/13 18:55:22 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/04/17 14:07:10 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,19 @@
 void	init(t_main *mm)
 {
 	init_const(mm);
-	MAX_ITER = 150;
-	COLOR = 318568064; // WHITE NAVY MIDNIGHTBLUE INDIGO MAROON LIME AQUA
+	MAX_ITER = 100;
+	COLOR = 268568064;
 	COLOR2 = BLACK;
 	mm->psyho = -1;
 	mm->change_colors = -1;
-	mm->win_help = NULL;
-
+	mm->menu = NULL;
+	mm->row = 10;
+	mm->play = 0;
+	mm->id_music = 1;
+	mm->move = 1;
+	mm->r = 0;
+	mm->g = 0;
+	mm->b = 0;
 	init_position(mm);
 	init_complex(mm);
 }
