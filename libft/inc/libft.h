@@ -6,7 +6,7 @@
 /*   By: apluzhni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/01 15:08:34 by apluzhni          #+#    #+#             */
-/*   Updated: 2019/04/09 14:42:11 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/04/17 14:11:18 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,12 @@
 # define FD_MAX		4864
 # define WIN_W		1500
 # define WIN_H		1000
+# define THREADS	8
+# define THR_WIDTH	150
 
 # define CHECK(x) if (!x) return (-1);
 # define SQR(x)	x * x
+
 /*
 ** Struct
 */

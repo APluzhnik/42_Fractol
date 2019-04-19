@@ -6,9 +6,10 @@
 /*   By: apluzhni <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/02 17:15:08 by apluzhni          #+#    #+#             */
-/*   Updated: 2018/11/02 17:17:25 by apluzhni         ###   ########.fr       */
+/*   Updated: 2019/04/17 14:11:01 by apluzhni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "../inc/libft.h"
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t len)
